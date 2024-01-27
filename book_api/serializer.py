@@ -32,7 +32,7 @@ from django.forms import ValidationError
 
 
 class BookSerializer(serializers.ModelSerializer):
-    description = serializers.SerializerMethodField()
+    # description = serializers.SerializerMethodField()
 
     class Meta:
         model = Book
@@ -48,5 +48,5 @@ class BookSerializer(serializers.ModelSerializer):
             raise ValidationError("Too Heavy for Our Inventory.")
         return data
 
-    def get_description(self, data):
-        return "This book is Called " + data.title + " and it is " + str(data.number_of_pages) + " long."
+    # def get_description(self, data):
+    #     return "This book is Called " + data.title + " and it is " + str(data.number_of_pages) + " long."

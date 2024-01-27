@@ -75,6 +75,7 @@ class BookCreate(APIView):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class BookDetail(APIView):
     def get_book_by_pk(self, pk):
         try:
