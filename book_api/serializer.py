@@ -43,11 +43,10 @@ class BookSerializer(serializers.ModelSerializer):
             raise ValidationError("No Diet Coke Please.")
         return value
 
-    def validate(self,data):
+    def validate(self, data):
         if data["number_of_pages"] > 200 and data["quantity"] > 200:
             raise ValidationError("Too Heavy for Our Inventory.")
         return data
 
-
     def get_description(self, data):
-        return "This book is Called "+ data.title + " and it is "+ str(data.number_of_pages) + " long."
+        return "This book is Called " + data.title + " and it is " + str(data.number_of_pages) + " long."
