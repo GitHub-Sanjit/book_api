@@ -36,7 +36,7 @@ class BookSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Book
-        fields = '__all__'
+        fields = ['title', 'number_of_pages', 'publish_date', 'quantity']
 
     def validate_title(self, value):
         if value == "Diet Coke":
